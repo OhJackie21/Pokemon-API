@@ -48,7 +48,7 @@
 }
 
 .searchp{
-    border-radius: 20px;
+    border-radius: 0px;
     border: 1px black solid;
     height: 30px;
     text-align: center;
@@ -71,4 +71,8 @@
     text-transform: uppercase;
 }
 
+
+.disclaimer{
+   padding-top: 30px;
+}
 
