@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+    margin: 0 auto;
+    width: 800px;
+    height: 500px;
+}
+
+.top,
+.disclaimer{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.top{
+    background-color: #3B4CCA;
+    padding: 15px;
+    
+}
+
+.main,
+.disclaimer{
+    margin-top: 30px;
+}
+
+.side,
+.generator{
+    flex: 1;
+    text-align: center;
+    background-color: aliceblue;
+    padding: 10px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 5px 5px 5px rgb(183, 183, 183);
+}
+
+.search{
+    flex: 3;
+    text-align: center;
+}
+
+::placeholder {
+    text-align: center;
+}
+
+.searchp{
+    border-radius: 20px;
+    border: 1px black solid;
+    height: 30px;
+    text-align: center;
+
+}
+
+.newPoke{
+    font-size: 15px;
+    border-radius: 20px;
+    border-style: none;
+    box-shadow: 2px 2px 2px grey;
+    padding: 2px;
+    background-color: #FFDE00;
+}
+
+.pokeList{
+    color: blue;
+    text-align: left;
+    padding-left: 25px;
+    text-transform: uppercase;
+}
+
+

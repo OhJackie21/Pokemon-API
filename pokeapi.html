@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon API</title>
+    <link rel="stylesheet" href="pokeapi.css">
+</head>
+<body>
+    <div class="top">
+        <img src="pokeapi_256.png" alt="PokeMon Api">
+    </div>
+    <div class="main">
+        <div class="side">
+            <h5>Can you name all the first top 10 pokemon?
+                click <a href="#" class="click1" onclick="pokeList()">here</a> to find out
+            </h5>
+                <br><br>
+            <ul class="pokeList">
+
+            </ul>
+        </div>
+        <div class="search">
+            <h2>Pokemon Search</h2>
+                <br>
+            <input type="search" placeholder="Search Pokemon here" class="searchp">
+            <div class="results">
+
+            </div>
+        </div>
+        <div class="generator">
+            <h4>Pokemon Generator</h4>
+            <br>
+            <button class="newPoke">Discover a new pokemon here</button>
+            
+        </div>
+    </div>
+    <div class="disclaimer">
+        <p><em>Disclaimer: Images and contents are all borrowed from the <a href="https://pokeapi.co">Pokemon API</a> for educational purposes</em></p>
+    </div>
+
+<script src="pokeapi.js"></script>
+</body>
+</html>
