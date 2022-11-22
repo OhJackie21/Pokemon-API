@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon API</title>
     <link rel="stylesheet" href="pokeapi.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <div class="top">
@@ -13,7 +16,8 @@
     </div>
     <div class="main">
         <div class="side">
-            <h5>Can you name all the first top 10 pokemon?
+            <h5>Can you name all the first 10 pokemon?
+                <br>
                 click <a href="#" class="click1" onclick="pokeList()">here</a> to find out
             </h5>
                 <br><br>
@@ -31,16 +35,20 @@
         </div>
         <div class="generator">
             <h4>Pokemon Generator</h4>
-            <br>
-            <button class="newPoke">Discover a new pokemon here</button>
-            
+                <br>
+            <button class="newPoke" onclick="randpoke()">Discover a new pokemon here</button>
+                <br><br>
+            <h2 class="pokeName"></h2>
+                <br>
+            <img src="" class="ranImg" alt="">
+                <br><br>
+            <p class="type"></p>
+            <p class="type2"></p>
         </div>
     </div>
     <div class="disclaimer">
         <p><em>Disclaimer: Images and contents are all borrowed from the <a href="https://pokeapi.co">Pokemon API</a> for educational purposes</em></p>
     </div>
-
-    <!--Tryint to figure out if this will update github-->
 
 <script src="pokeapi.js"></script>
 </body>

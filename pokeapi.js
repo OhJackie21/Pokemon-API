@@ -1,7 +1,10 @@
 var pokeList = document.querySelector(".pokeList");
 var click1 = document.querySelector(".click1");
-var search = document.querySelector(".searchp");
-console.log("hello");
+var ranImg = document.querySelector(".ranImg");
+var pokeName = document.querySelector(".pokeName");
+var type = document.querySelector(".type");
+var type2 = document.querySelector(".type2");
+
 
 click1.addEventListener("click",async function topTen() {
     var response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=10");
@@ -16,11 +19,16 @@ click1.addEventListener("click",async function topTen() {
 {once : true});
 
 
-// async function pokeSearch() {
-//     var response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
-//     var search1 = await response.json();
-//     console.log(poke.sprites.front_default);
-
-// }
-    
-// pokeSearch();
+async function randpoke() {
+    var pokeId = Math.floor(Math.random() * 905);
+    console.log(pokeId);
+    var response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`);
+    var change = await response.json();
+    pokeName.innerText = change.name;
+    ranImg.src = change.sprites.front_shiny;
+    type.innerText = change.types[0].type.name;
+    type2.innerText = change.types[1].type.name;
+    // type2.innerText = change.types[1].type.name;
+    // console.log(change.types[0].type.name);
+    // console.log(change.types[1].type.name);
+}
