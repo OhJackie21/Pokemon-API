@@ -47,6 +47,7 @@ body{
     text-align: center;
 }
 
+
 ::placeholder {
     text-align: center;
 }
@@ -56,6 +57,7 @@ body{
     border: 1px black solid;
     height: 30px;
     text-align: center;
+    width: 200px;
 
 }
 
@@ -84,4 +86,13 @@ body{
 
 .pokeName::first-letter{
     text-transform: uppercase;
+}
+
+.type::first-letter,
+.type2::first-letter{
+    text-transform: uppercase;
+}
+
+.searchImg{
+    height: 200px;
 }

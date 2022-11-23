@@ -25,10 +25,51 @@ async function randpoke() {
     var response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`);
     var change = await response.json();
     pokeName.innerText = change.name;
-    ranImg.src = change.sprites.front_shiny;
-    type.innerText = change.types[0].type.name;
-    type2.innerText = change.types[1].type.name;
+    if(typeof change.types[1] != "undefined"){
+        type2.innerText = change.types[1].type.name;
+        type.innerText = change.types[0].type.name;
+        ranImg.src = change.sprites.front_shiny;
+    }else{
+        type.innerText = change.types[0].type.name;
+        ranImg.src = change.sprites.front_shiny;
+        type2.innerText = " ";
+    }
     // type2.innerText = change.types[1].type.name;
     // console.log(change.types[0].type.name);
     // console.log(change.types[1].type.name);
+}
+
+//! This is for the search button
+
+var form = document.querySelector("form");
+var name1 = document.querySelector(".name1");
+var searchImg = document.querySelector(".searchImg");
+var types3 = document.querySelector(".types-1");
+var types4 = document.querySelector(".types-2");
+var orderId = document.querySelector(".order");
+var held = document.querySelector(".held");
+
+async function searchPoke(){
+    var formData = new FormData(form);
+    var query = formData.get("searchp");
+    var query = query.toLocaleLowerCase();
+    var response = await fetch(`https://pokeapi.co/api/v2/pokemon/${query}`);
+    var searchPman = await response.json();
+    name1.innerText = searchPman.name;
+    if(typeof searchPman.types[1] != "undefined"){
+        types3.innerText = "Type 1: " + searchPman.types[1].type.name;
+        types4.innerText = "Type 2: " +searchPman.types[0].type.name;
+        searchImg.src = searchPman.sprites.front_shiny;
+        orderId.innerText = "PokeDex Id # " + searchPman.id;
+        held.innerText = "Item held: " + searchPman.held_items[0].item.name;
+
+    }else if(typeof searchPman.types[0] != "undefined" && typeof searchPman.types[1] != "undefined"){
+        types4.innerText = "Type 1: " + searchPman.types[0].type.name;
+        searchImg.src = searchPman.sprites.front_shiny;
+        types3.innerText = " ";
+        held.innerText = "Item held: " + searchPman.held_items[0].item.name;
+        orderId.innerText = "PokeDex Id # " + searchPman.id;
+    }else{
+        name1.innerText = "That is not a Pokemon";
+    }
 }
