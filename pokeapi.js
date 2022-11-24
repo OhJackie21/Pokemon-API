@@ -56,6 +56,7 @@ async function searchPoke(){
     var response = await fetch(`https://pokeapi.co/api/v2/pokemon/${query}`);
     var searchPman = await response.json();
     name1.innerText = searchPman.name;
+
     if(typeof searchPman.types[1] != "undefined"){
         types3.innerText = "Type 1: " + searchPman.types[1].type.name;
         types4.innerText = "Type 2: " +searchPman.types[0].type.name;
@@ -63,13 +64,11 @@ async function searchPoke(){
         orderId.innerText = "PokeDex Id # " + searchPman.id;
         held.innerText = "Item held: " + searchPman.held_items[0].item.name;
 
-    }else if(typeof searchPman.types[0] != "undefined" && typeof searchPman.types[1] != "undefined"){
+    }else{
         types4.innerText = "Type 1: " + searchPman.types[0].type.name;
         searchImg.src = searchPman.sprites.front_shiny;
         types3.innerText = " ";
         held.innerText = "Item held: " + searchPman.held_items[0].item.name;
         orderId.innerText = "PokeDex Id # " + searchPman.id;
-    }else{
-        name1.innerText = "That is not a Pokemon";
     }
 }
