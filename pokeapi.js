@@ -59,16 +59,33 @@ async function searchPoke(){
 
     if(typeof searchPman.types[1] != "undefined"){
         types3.innerText = "Type 1: " + searchPman.types[1].type.name;
-        types4.innerText = "Type 2: " +searchPman.types[0].type.name;
+        types4.innerText = "Type 2: " + searchPman.types[0].type.name;
         searchImg.src = searchPman.sprites.front_shiny;
         orderId.innerText = "PokeDex Id # " + searchPman.id;
         held.innerText = "Item held: " + searchPman.held_items[0].item.name;
 
-    }else{
+    }else if(typeof searchPman.types[1] == "undefined"){
         types4.innerText = "Type 1: " + searchPman.types[0].type.name;
         searchImg.src = searchPman.sprites.front_shiny;
         types3.innerText = " ";
         held.innerText = "Item held: " + searchPman.held_items[0].item.name;
         orderId.innerText = "PokeDex Id # " + searchPman.id;
+    }else{
+        name1.innerText = "This is not a Pokemon"
     }
+
+    // if(typeof searchPman.types[1] != "undefined"){
+    //     types3.innerText = "Type 1: " + searchPman.types[1].type.name;
+    //     types4.innerText = "Type 2: " +searchPman.types[0].type.name;
+    //     searchImg.src = searchPman.sprites.front_shiny;
+    //     orderId.innerText = "PokeDex Id # " + searchPman.id;
+    //     held.innerText = "Item held: " + searchPman.held_items[0].item.name;
+
+    // }else{
+    //     types4.innerText = "Type 1: " + searchPman.types[0].type.name;
+    //     searchImg.src = searchPman.sprites.front_shiny;
+    //     types3.innerText = " ";
+    //     held.innerText = "Item held: " + searchPman.held_items[0].item.name;
+    //     orderId.innerText = "PokeDex Id # " + searchPman.id;
+    // }
 }
